@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+body{
+  background-color: #000;
+}
+
+/* Loading screen container */
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  animation: fadeOut 1s ease-in-out 3s forwards;
+}
+
+/* Glowing gradient logo */
+.logo2 {
+  font-size: 120px;
+  font-weight: bold;
+background:linear-gradient(90deg, #00ffe0, #ff00f6, #00ffe0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+   background-size: 300%;
+  animation: gradient-glow 3s ease infinite, fadeIn 1s forwards;
+  letter-spacing: 4px;
+  opacity: 0;
+}
+
+@keyframes gradient-glow {
+  0% { background-position: 0%; }
+  50% { background-position: 100%; }
+  100% { background-position: 0%; }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+body, html {
+  height: 100%;
+  overflow: hidden;
+}
+
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  height: 100vh;
+  background: #000;
+  z-index: -1;
+  animation: floatBackground 30s infinite linear;
+  background-size: cover;
+  background-position: center;
+}
+
+@keyframes floatBackground {
+  from { background-position: 0 0; }
+  to { background-position: 100% 100%; }
+}
+
+.container {
+  text-align: center;
+  padding: 60px 20px;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  font-size:  60px;;
+  margin-bottom: 20px;
+  color: #ffffffdd;
+}
+
+.mood-buttons button, .quote-section button {
+  padding: 15px 30px;
+  margin: 10px;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.mood-buttons button:hover, .quote-section button:hover {
+  transform: scale(1.05);
+}
+
+.mood-buttons button:nth-child(1) {
+  background-color: #fbff82;
+  color: #000;
+}
+
+.mood-buttons button:nth-child(2) {
+  background-color: #6babfa;
+  color: #000;
+}
+.mood-buttons button:nth-child(3) {
+  background-color: #afcffc;
+  color: #000;
+}
+.mood-buttons button:nth-child(4) {
+  background-color: #d6ff6e;
+  color: #000;
+}
+.mood-buttons button:nth-child(5) {
+  background-color: #85ffeb;
+  color: #000;
+}
+.mood-buttons button:nth-child(6) {
+  background-color: #ff6a6a;
+  color: #000;
+}
+.mood-buttons button:nth-child(7) {
+  background-color: #af8aff;
+  color: #000;
+}
+.mood-buttons button:nth-child(8) {
+  background-color: #ff8000;
+  color: #000;
+}
+.mood-buttons button:nth-child(9) {
+  background-color: #adff76;
+  color: #000;
+}
+.mood-buttons button:nth-child(10) {
+  background-color: #ec7dc3;
+  color: #000;
+}
+.mood-buttons button:nth-child(11) {
+  background-color: #f389ca;
+  color: #000;
+}
+.mood-buttons button:nth-child(12) {
+  background-color:#b995de;
+  color: #000;
+}
+.mood-buttons button:nth-child(13) {
+  background-color: #806e6a;
+  color: #000;
+}
+
+.quote-section {
+  margin-top: 40px;
+  font-size: 1.3rem;
+}
+
+#quote-text {
+  padding: 20px;
+  font-style: italic;
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 600px;
+}
+.food-bg { 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  z-index: -1; 
+  pointer-events: none; 
+  overflow: hidden; 
+} 
+ 
+.food-bg span { 
+  position: absolute; 
+  font-size: calc(2rem + 4vw);
+  animation: floatFood linear infinite; 
+  opacity: 0.8; 
+  user-select: none; 
+} 
+ 
+@keyframes floatFood { 
+  0% { 
+    transform: translateY(100vh) rotate(0deg); 
+    opacity: 1; 
+  } 
+  100% { 
+    transform: translateY(-20vh) rotate(720deg); 
+    opacity: 0; 
+ 
+  } 
+}
+
+.gradient{
+    background: linear-gradient(to right,#00aaa7, #7e42a7, #6600c5, #6070fd,#2a46ff, #0099ff, #008ead);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-gradient 2.5s linear infinite;
+}
+@keyframes animate-gradient {
+    to{
+        background-position: 200%;
+    }
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: rgba(0, 0, 0, 0.85);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #00ffe0, #ff00f6, #00ffe0);
+  background-clip: text;                /* Standard property */
+  -webkit-background-clip: text;        /* Chrome/Safari */
+  -webkit-text-fill-color: transparent; /* Show background through text */
+  background-size: 300%;
+  animation: gradient-glow 3s ease infinite, fadeIn 1s forwards;
+  letter-spacing: 4px;
+  opacity: 0;
+}
+
+nav a {
+  margin-left: 20px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #00ffe0;
+}

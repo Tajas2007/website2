@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #091540, #1a1a2e);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      gap: 30px;
+      justify-content: space-between;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 40px;
+      border-radius: 15px;
+      flex: 1 1 450px;
+      box-shadow: 0 0 20px #00ffe0;
+    }
+
+    h1 {
+      color: #00ffe0;
+      font-size: 30px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+      font-size: 16px;
+    }
+
+    form button {
+      width: 100%;
+      background: linear-gradient(to right, #00ffe0, #ff00f6);
+      color: #000;
+      font-weight: bold;
+      padding: 14px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    form button:hover {
+      transform: scale(1.05);
+    }
+
+    .cards-container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      flex: 1 1 300px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 0 10px #00ffe0;
+      animation: fadeSlideIn 1s ease forwards;
+    }
+
+    .card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #00ffe0;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+      color: #00ffe0;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #ccc;
+    }
+
+    @keyframes fadeSlideIn {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 950px) {
+      .wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cards-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .card {
+        flex: 1 1 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    
+    <div class="container">
+      <h1>Sign Up</h1>
+      <h2>Registration</h2>
+      <form id="registration-form">
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9]{10}" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <button type="submit">Submit Registration</button>
+      </form>
+      <p id="success-msg" style="text-align:center; color:#00ffe0; margin-top:20px;"></p>
+    </div>
+  <script>
+    
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbykGad_wiX38-M0brwPUKO8yqqwwEvepc8TeNh6JQWgxSc-3MW3UOAg7INTQMixMuVv/exec'; 
+    const form = document.getElementById('registrationForm');
+    const successMsg = document.getElementById('successMsg');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const formData = new FormData(form);
+
+      fetch(scriptURL, {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        successMsg.textContent = "✅ Registration submitted successfully!";
+        successMsg.classList.remove('error');
+        form.reset();
+      })
+      .catch(error => {
+        successMsg.textContent = "❌ Submission failed. Please try again!";
+        successMsg.classList.add('error');
+        console.error('Error!', error.message);
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mood-Based Quote Generator</title>
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+  <div class="loading-screen">
+    <div class="logo2">MoodMuse.com</div>
+  </div>
+    <header>
+      <div class="logo">MoodMuse.com</div>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="reg.html">Register</a>
+      </nav>
+    </header>
+
+  <div class="background" id="background"></div>
+<br><br><br>
+  <div class="container">
+    <h1><span class="gradient">SELECT YOUR MOOD</span></h1><br><br><br>
+    <div class="mood-buttons" id="mood-selection" class="gradient">
+      <button onclick="selectMood('happy')">&#128513 Happy</button>
+      <button onclick="selectMood('sad')">&#129402 Sad</button>
+      <button onclick="selectMood('crying')">&#128557 Crying</button><br>
+      <button onclick="selectMood('sleepy')">&#128564 Sleepy </button>
+      <button onclick="selectMood('confusion')">&#128534 Confusion</button><br>
+      <button onclick="selectMood('anger')">&#129324 Anger</button>
+      <button onclick="selectMood('disgusted')">&#129326 Disgusted</button>
+      <button onclick="selectMood('butterflies')">&#128525 Butterflies</button><br>
+      <button onclick="selectMood('shocked')">&#129398 Shocked</button>
+      <button onclick="selectMood('exausted')">&#128565 Exausted</button>
+    </div>
+
+    <div class="quote-section" id="quote-section" style="display:none;">
+      <h2>Your Quote:</h2>
+      <p id="quote-text">Click "Get Another Quote" to refresh.</p>
+      <button onclick="getQuote()">🔄 Get Another Quote</button>
+      <br><br>
+      <button onclick="resetMood()">🔙 Change Mood</button>
+    </div>
+  </div>
+    <script src="home.js"></script>
+<div class="food-bg"> 
+  <span style="left: 5%; animation-duration: 12s;">
+ &#128512
+ </span> 
+  <span style="left: 15%; animation-duration: 10s; font-size: 
+5rem;">
+ &#128514
+ </span> 
+  <span style="left: 30%; animation-duration: 14s;">
+ &#128517
+ </span> 
+  <span style="left: 45%; animation-duration: 9s; font-size: 
+4rem;">
+ &#128519
+ </span> 
+  <span style="left: 60%; animation-duration: 11s;">
+ &#128520
+ </span> 
+  <span style="left: 75%; animation-duration: 13s; font-size: 
+6rem;">
+ &#128526
+ </span> 
+  <span style="left: 85%; animation-duration: 8s;">
+ &#128529
+ </span> 
+  <span style="left: 22%; animation-duration: 15s; font-size: 
+4.5rem;">
+ &#128548
+ </span> 
+  <span style="left: 68%; animation-duration: 10s; font-size: 
+5rem;">
+ &#128552
+ </span> 
+  <span style="left: 90%; animation-duration: 12s;">
+ &#128557
+ </span> 
+ &#128558
+<div class="food-bg"> 
+  <span style="left: 10%; animation-duration: 10s;">
+ &#128560
+ </span> 
+  <span style="left: 25%; animation-duration: 8s; font-size: 
+5rem;">
+ &#128564
+ </span> 
+  <span style="left: 35%; animation-duration: 12s;">
+ &#128565
+ </span> 
+  <span style="left: 50%; animation-duration: 5s; font-size: 
+4rem;">
+ &#128566
+ </span> 
+  <span style="left: 65%; animation-duration: 6s;">
+ &#129315
+ </span> 
+<span style="left: 80%; animation-duration: 10s; font-size: 
+6rem;">
+ &#129319
+ </span> 
+<span style="left: 90%; animation-duration: 4s;">
+ &#129326
+ </span> 
+<span style="left: 95%; animation-duration: 3s; font-size: 
+4.5rem;">
+ &#129392
+ </span> 
+<span style="left: 66%; animation-duration: 7s; font-size: 
+5rem;">
+ &#129398
+ </span> 
+<span style="left: 100%; animation-duration: 2s;">
+ &#129402
+ </span> 
+</div> 
+
+</body>
+</html>
